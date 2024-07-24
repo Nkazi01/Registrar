@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>upload</ion-title>
+    <ion-title>UPLOAD DOCUMENTS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">upload</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="centered-content">
+    <div class="content-wrapper">
+      <div class="diamond-container">
+        <div class="diamond"></div>
+        <div class="diamond"></div>
+        <div class="diamond"></div>
+      </div>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Submission Date</ion-label>
+        <ion-input type="date"></ion-input>
+      </ion-item>
+
+      <ion-item class="inline-select">
+        <ion-label>Module for moderation:</ion-label>
+        <ion-select interface="popover" slot="end">
+          <ion-select-option value="moderation">Moderation</ion-select-option>
+          <ion-select-option value="assessment">Assessment</ion-select-option>
+          <ion-select-option value="feedback">Feedback</ion-select-option>
+        </ion-select> 
+      </ion-item>
+
+      <div class="drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+        <p>Drag and drop files here or</p>
+        <ion-button (click)="fileInput.click()">Choose Files</ion-button>
+        <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" multiple>
+      </div>
+
+      <ion-button expand="block" (click)="submit()">Submit</ion-button>
+    </ion-card>
+  </div>
+  </div>
 </ion-content>

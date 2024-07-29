@@ -1,0 +1,113 @@
+ion-toolbar {
+    background-color: maroon;
+  }
+  
+  ion-title {
+    color: white;
+    text-align: center;
+  }
+  
+  .profile-icon {
+    background-color: maroon;
+    color: black;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .content-background {
+    background-color: royalblue;
+  }
+  
+  .view-docs-container {
+    display: flex;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .side-panel {
+    width: 200px;
+    background-color: maroon;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .side-panel ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .side-panel li {
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: left;
+    position: relative;
+  }
+  
+  .side-panel li:hover {
+    background-color: #800000;
+  }
+  
+  .count-circle {
+    background-color: white;
+    color: maroon;
+    border-radius: 50%;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .table-container {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: maroon;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    color: white;
+  }
+  
+  .odd-row {
+    background-color: white;
+  }
+  
+  .even-row {
+    background-color: lightcoral;
+  }
+  
+  ion-footer {
+    background-color: maroon;
+  }
+  
+  ion-footer ion-title {
+    color: white;
+    text-align: center;
+  }
+  
+  .heart-icon {
+    color: red;
+  }
+  

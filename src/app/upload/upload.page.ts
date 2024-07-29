@@ -6,12 +6,16 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['upload.page.scss'],
 })
 export class UploadPage {
-  @ViewChild('fileInput') fileInput!: ElementRef; // Use the non-null assertion operator
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
   selectedFile: File | null = null;
   selectedDate: string = '';
   selectedModule: string = '';
   selectedFiles: File[] = [];
+  selectedFileNames: string[] = [];
+  
+  showError: boolean = false;
+  errorMessage: string = '';
 
   constructor() {}
 
@@ -21,6 +25,7 @@ export class UploadPage {
     if (file) {
       this.selectedFile = file;
       this.selectedFiles = [file];
+      this.showError = false;
       console.log('File selected:', file.name);
     }
   }
@@ -57,18 +62,23 @@ export class UploadPage {
     }
   }
 
-  handleFiles(files: FileList) {
-    this.selectedFiles = Array.from(files);
-    this.selectedFile = this.selectedFiles[0] || null;
-    console.log('Selected files:', this.selectedFiles);
-  }
-
+// Update handleFiles method
+handleFiles(files: FileList) {
+  this.selectedFiles = Array.from(files);
+  this.selectedFileNames = this.selectedFiles.map(file => file.name);
+  this.selectedFile = this.selectedFiles[0] || null;
+  this.showError = false;
+  console.log('Selected files:', this.selectedFiles);
+}
   submit() {
     if (!this.selectedFile || !this.selectedDate || !this.selectedModule) {
-      console.log('Please fill in all fields and select a file.');
+      this.errorMessage = 'Please fill in all fields and select a file.';
+      this.showError = true;
+      console.log(this.errorMessage);
       return;
     }
 
+    this.showError = false;
     console.log('Submitting:', {
       date: this.selectedDate,
       module: this.selectedModule,
@@ -76,8 +86,6 @@ export class UploadPage {
       allFiles: this.selectedFiles.map(f => f.name)
     });
 
-    // Here you would typically send the data to a server
-    // For example:
     // this.uploadService.uploadFile(this.selectedFiles, this.selectedDate, this.selectedModule)
     //   .subscribe(response => {
     //     console.log('Upload successful', response);

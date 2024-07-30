@@ -14,7 +14,15 @@ ion-title {
     color: black;
     padding: 8px;
     border-radius: 50%;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
+
+.profile-icon:hover {
+    --background: rgb(13, 80, 111);
+    color: white;
+    border-radius: 54%;
+}
+
   
 .content-background {
     --background: rgb(13, 80, 111);
@@ -23,7 +31,7 @@ ion-title {
 .view-docs-container {
     display: flex;
     flex-direction: row;
-    //padding: 10px;
+    padding: 10px 10px 10px 10px;
     height: calc(100% - 56px);
     box-sizing: border-box;
   
@@ -34,10 +42,10 @@ ion-title {
   
 .side-panel {
     background-color: maroon;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     border-radius: 5px;
     color: white;
-    margin-right: 10px;
+    // margin: 10px 10px 10px 10px;
     width: 250px;  // Adjusted for larger screens
   
     @media (max-width: 768px) {
@@ -50,23 +58,32 @@ ion-title {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
+  }
   
-.side-panel li {
+  .side-panel li {
     padding: 10px;
     cursor: pointer;
     margin-bottom: 10px;
-    background-color: transparent;
+    background-color: maroon;
     border-radius: 5px;
     text-align: left;
     position: relative;
-}
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  }
   
-.side-panel li:hover {
-    background-color: #800000;
-}
+  .side-panel li:hover {
+    background-color: rgb(13, 80, 111);
+    color: rgb(254, 186, 50);
+    transform: scale(1.05); /* Slightly increased scaling for hover effect */
+  }
   
-.count-circle {
+  .select {
+    color: rgb(254, 186, 50);
+    //color: rgb(13, 80, 111);
+    transform: scale(1.005);
+  }
+  
+  .count-circle {
     background-color: white;
     color: maroon;
     border-radius: 50%;
@@ -75,12 +92,14 @@ ion-title {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-}
+  }
+  
   
 .table-container {
     flex: 1;
     background-color: #ffffff;
-    padding: 20px;
+    // margin: 20px 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -95,7 +114,13 @@ thead {
     background-color: maroon;
 }
   
-th, td {
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -107,10 +132,36 @@ th {
   
 .odd-row {
     background-color: white;
+    color: rgb(34, 34, 34);
+
+}
+
+.odd-row:hover {
+    background-color: rgb(13, 80, 111);
+    color:rgb(254, 186, 50);
+    text-decoration: solid;
+    transition: ease 0.3s ;
+    transform: scale(1.01);
 }
   
 .even-row {
     background-color: lightcoral;
+    color: rgb(57, 48, 48);
+}
+
+.even-row:hover {
+    background-color: rgb(13, 80, 111);
+    color:rgb(254, 186, 50);
+    text-decoration: solid;
+    transition: ease 0.3s ;
+    transform: scale(1.01);
+}
+
+/* Style for selected row */
+.selected-row {
+    background-color: rgb(254, 186, 50); 
+    color:  rgb(13, 80, 111);
+    transform: scale(1.005);
 }
   
 ion-footer {

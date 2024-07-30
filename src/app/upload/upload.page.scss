@@ -1,0 +1,123 @@
+ion-content {
+    --background: #054C5B;
+    
+  }
+  
+  ion-title {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-toolbar {
+    --padding-start: 0;
+    --padding-end: 0;
+    --background: #054C5B;
+  }
+  
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 550px;
+  }
+  
+  .diamond-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .diamond {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    transform: rotate(45deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .diamond:nth-child(1) {
+    background-color: #FFFFFF;
+  }
+  
+  .diamond:nth-child(2) {
+    background-color: #FAC710;
+  }
+  
+  .diamond:nth-child(3) {
+    background-color: #812B29;
+  }
+  
+  ion-card {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  /* New styles for the buttons */
+ion-button {
+    --background: #812B29;
+    --background-hover: #9e3532;
+    --background-activated: #6a2321;
+    --background-focused: #9e3532;
+  
+    --color: #FFFFFF;
+  
+    --border-radius: 8px;
+    --border-color: #812B29;
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+
+  .inline-select {
+    --min-height: 40px; /* Adjust this value to match your date input height */
+    align-items: center;
+  }
+  
+  .inline-select ion-label {
+    margin-right: 10px;
+    flex: 0 0 auto;
+  }
+  
+  .inline-select ion-select {
+    max-width: 60%; /* Adjust this value as needed */
+    --padding-end: 0;
+  }
+  
+  .inline-select ion-select::part(icon) {
+    margin-right: 0;
+  }
+  
+  /* Ensure consistent styling with the date input */
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+  }
+  
+  ion-select {
+    --padding-start: 8px;
+    --padding-end: 8px;
+  }
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,26 @@
+ion-content {
+    --ion-background-color: teal;
+  }
+  
+  .form-container {
+    background: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  ion-item {
+    --background: transparent;
+    --border-color: #ccc;
+  }
+  
+  ion-label {
+    color: black;
+  }
+  
+  ion-input,
+  ion-textarea {
+    color: black;
+  }
+  

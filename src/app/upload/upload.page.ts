@@ -9,11 +9,12 @@ export class UploadPage {
   @ViewChild('fileInput') fileInput!: ElementRef;
 
   selectedFile: File | null = null;
-  selectedDate: string = '';
-  selectedModule: string = '';
   selectedFiles: File[] = [];
   selectedFileNames: string[] = [];
-  
+
+  customDate: string = '';  // Property for custom date
+  customModule: string = '';  // Property for custom module
+
   showError: boolean = false;
   errorMessage: string = '';
 
@@ -62,16 +63,16 @@ export class UploadPage {
     }
   }
 
-// Update handleFiles method
-handleFiles(files: FileList) {
-  this.selectedFiles = Array.from(files);
-  this.selectedFileNames = this.selectedFiles.map(file => file.name);
-  this.selectedFile = this.selectedFiles[0] || null;
-  this.showError = false;
-  console.log('Selected files:', this.selectedFiles);
-}
+  handleFiles(files: FileList) {
+    this.selectedFiles = Array.from(files);
+    this.selectedFileNames = this.selectedFiles.map(file => file.name);
+    this.selectedFile = this.selectedFiles[0] || null;
+    this.showError = false;
+    console.log('Selected files:', this.selectedFiles);
+  }
+
   submit() {
-    if (!this.selectedFile || !this.selectedDate || !this.selectedModule) {
+    if (!this.customDate || !this.customModule || !this.selectedFile) {
       this.errorMessage = 'Please fill in all fields and select a file.';
       this.showError = true;
       console.log(this.errorMessage);
@@ -80,13 +81,14 @@ handleFiles(files: FileList) {
 
     this.showError = false;
     console.log('Submitting:', {
-      date: this.selectedDate,
-      module: this.selectedModule,
+      customDate: this.customDate,  // Include customDate
+      customModule: this.customModule,  // Include customModule
       file: this.selectedFile.name,
       allFiles: this.selectedFiles.map(f => f.name)
     });
 
-    // this.uploadService.uploadFile(this.selectedFiles, this.selectedDate, this.selectedModule)
+    // Uncomment and use this if you have an upload service
+    // this.uploadService.uploadFile(this.selectedFiles, this.customDate, this.customModule)
     //   .subscribe(response => {
     //     console.log('Upload successful', response);
     //   }, error => {

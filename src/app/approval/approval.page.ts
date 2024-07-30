@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Import Router
+import { Router } from '@angular/router';
 
 interface DocumentItem {
   email: string;
   documentName: string;
-  approved: boolean;
-  declined: boolean;
-  suspended: boolean;
+  status: string;
   comment: string;
 }
 
@@ -17,16 +15,16 @@ interface DocumentItem {
 })
 export class ApprovalPage implements OnInit {
   items: DocumentItem[] = [
-    { email: 'user1@example.com', documentName: 'Document 1', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user2@example.com', documentName: 'Document 2', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user3@example.com', documentName: 'Document 3', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user4@example.com', documentName: 'Document 4', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user5@example.com', documentName: 'Document 5', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user6@example.com', documentName: 'Document 6', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user7@example.com', documentName: 'Document 7', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user8@example.com', documentName: 'Document 8', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user9@example.com', documentName: 'Document 9', approved: false, declined: false, suspended: false, comment: '' },
-    { email: 'user10@example.com', documentName: 'Document 10', approved: false, declined: false, suspended: false, comment: '' },
+    { email: 'user1@example.com', documentName: 'Document 1', status: '', comment: '' },
+    { email: 'user2@example.com', documentName: 'Document 2', status: '', comment: '' },
+    { email: 'user3@example.com', documentName: 'Document 3', status: '', comment: '' },
+    { email: 'user4@example.com', documentName: 'Document 4', status: '', comment: '' },
+    { email: 'user5@example.com', documentName: 'Document 5', status: '', comment: '' },
+    { email: 'user6@example.com', documentName: 'Document 6', status: '', comment: '' },
+    { email: 'user7@example.com', documentName: 'Document 7', status: '', comment: '' },
+    { email: 'user8@example.com', documentName: 'Document 8', status: '', comment: '' },
+    { email: 'user9@example.com', documentName: 'Document 9', status: '', comment: '' },
+    { email: 'user10@example.com', documentName: 'Document 10', status: '', comment: '' },
   ];
 
   constructor(private router: Router) { }
@@ -35,20 +33,24 @@ export class ApprovalPage implements OnInit {
     // Initialize any required data or services here
   }
 
-  onCheckboxChange(item: DocumentItem, field: string) {
-    if (field === 'approved') {
-      item.declined = false;
-      item.suspended = false;
-    } else if (field === 'declined') {
-      item.approved = false;
-      item.suspended = false;
-    } else if (field === 'suspended') {
-      item.approved = false;
-      item.declined = false;
-    }
+  onStatusChange(item: DocumentItem) {
+    console.log('Status changed:', item);
   }
 
   goBack() {
     this.router.navigate(['/previous-page']);  // Update this to your actual route
+  }
+
+  resetForm() {
+    this.items = this.items.map(item => ({
+      ...item,
+      status: '',
+      comment: ''
+    }));
+  }
+
+  saveChanges() {
+    // Handle save operation here
+    console.log('Changes saved:', this.items);
   }
 }

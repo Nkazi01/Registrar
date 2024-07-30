@@ -13,9 +13,7 @@
             <tr>
               <th>Email</th>
               <th>Document Name</th>
-              <th>Approved</th>
-              <th>Declined</th>
-              <th>Suspended</th>
+              <th>Status</th>
               <th>Comment</th>
             </tr>
           </thead>
@@ -23,6 +21,7 @@
             <tr *ngFor="let item of items; let i = index" [ngClass]="{'striped-row': i % 2 === 0}">
               <td>{{ item.email }}</td>
               <td>{{ item.documentName }}</td>
+<<<<<<< HEAD
               <!-- <td>
                 <ion-checkbox [(ngModel)]="item.approved" (ionChange)="onCheckboxChange(item, 'approved')"></ion-checkbox>
               </td> -->
@@ -36,6 +35,14 @@
               </td>
               <td>
                 <ion-checkbox [(ngModel)]="item.suspended" (ionChange)="onCheckboxChange(item, 'suspended')"></ion-checkbox>
+=======
+              <td>
+                <ion-select [(ngModel)]="item.status" (ionChange)="onStatusChange(item)">
+                  <ion-select-option value="approved">Approved</ion-select-option>
+                  <ion-select-option value="declined">Declined</ion-select-option>
+                  <ion-select-option value="suspended">Suspended</ion-select-option>
+                </ion-select>
+>>>>>>> 3d1d5a4aefe6adeec1e8a101c03d3a4b12fb5bdb
               </td>
               <td>
                 <ion-input [(ngModel)]="item.comment" placeholder="Add comment" class="comment-input"></ion-input>
@@ -43,7 +50,11 @@
             </tr>
           </tbody>
         </table>
-        <ion-button class="back-button" (click)="goBack()">Back</ion-button>
+        <div class="button-group">
+          <ion-button class="back-button" (click)="goBack()">Back</ion-button>
+          <ion-button class="reset-button" (click)="resetForm()">Reset</ion-button>
+          <ion-button class="save-button" (click)="saveChanges()">Save</ion-button>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

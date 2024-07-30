@@ -13,10 +13,18 @@
   <div class="view-docs-container">
     <div class="side-panel">
       <ul>
-        <li (click)="showDocuments('all')">All Documents <span class="count-circle">{{allCount}}</span></li>
-        <li (click)="showDocuments('approved')">Approved <span class="count-circle">{{approvedCount}}</span></li>
-        <li (click)="showDocuments('declined')">Declined <span class="count-circle">{{declinedCount}}</span></li>
-        <li (click)="showDocuments('suspended')">Suspended <span class="count-circle">{{suspendedCount}}</span></li>
+        <li (click)="showDocuments('all')" [ngClass]="{'select': activeTab === 'all'}">
+          All Documents <span class="count-circle">{{allCount}}</span>
+        </li>
+        <li (click)="showDocuments('approved')" [ngClass]="{'select': activeTab === 'approved'}">
+          Approved <span class="count-circle">{{approvedCount}}</span>
+        </li>
+        <li (click)="showDocuments('declined')" [ngClass]="{'select': activeTab === 'declined'}">
+          Declined <span class="count-circle">{{declinedCount}}</span>
+        </li>
+        <li (click)="showDocuments('suspended')" [ngClass]="{'select': activeTab === 'suspended'}">
+          Suspended <span class="count-circle">{{suspendedCount}}</span>
+        </li>
       </ul>
     </div>
     <div class="table-container">
@@ -29,7 +37,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let doc of allDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+          <tr *ngFor="let doc of allDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
+          (click)="selectRow(doc)">
             <td>{{doc.email}}</td>
             <td>{{doc.name}}</td>
             <td>{{doc.status}}</td>
@@ -45,7 +54,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let doc of approvedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+          <tr *ngFor="let doc of approvedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
+          (click)="selectRow(doc)">
             <td>{{doc.email}}</td>
             <td>{{doc.name}}</td>
             <td>{{doc.status}}</td>
@@ -61,7 +71,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let doc of declinedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+          <tr *ngFor="let doc of declinedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
+          (click)="selectRow(doc)">
             <td>{{doc.email}}</td>
             <td>{{doc.name}}</td>
             <td>{{doc.status}}</td>
@@ -77,7 +88,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let doc of suspendedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+          <tr *ngFor="let doc of suspendedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
+          (click)="selectRow(doc)">
             <td>{{doc.email}}</td>
             <td>{{doc.name}}</td>
             <td>{{doc.status}}</td>

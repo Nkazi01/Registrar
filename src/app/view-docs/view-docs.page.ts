@@ -34,8 +34,28 @@ export class ViewDocsPage implements OnInit {
   ngOnInit() {
   }
 
+  selectedDocumentType: string = 'all'; // Initialize to 'all' or whichever you want to be default
+
+showDocument(type: string): void {
+  this.selectedDocumentType = type;
+  // Add your logic to display documents based on the selected type
+}
+
   showDocuments(tab: string) {
     this.activeTab = tab;
   }
+
+// Define a variable to store the selected document
+selectedDocument: any;
+
+// Method to select a row
+selectRow(doc: any) {
+    this.selectedDocument = doc;
+}
+
+// Method to check if a row is selected
+isSelected(doc: any): boolean {
+    return this.selectedDocument === doc;
+}
 
 }

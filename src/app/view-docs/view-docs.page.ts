@@ -9,9 +9,14 @@ export class ViewDocsPage implements OnInit {
   activeTab: string = 'all';
 
   allDocuments = [
-    { email: 'user1@example.com', name: 'Doc 1', status: 'Approved' },
-    { email: 'user2@example.com', name: 'Doc 2', status: 'Declined' },
-    { email: 'user3@example.com', name: 'Doc 3', status: 'Suspended' },
+    { email: 'user1@example.com', name: 'Doc 1', status: 'Approved'},
+    { email: 'user2@example.com', name: 'Doc 2', status: 'Declined'},
+    { email: 'user3@example.com', name: 'Doc 3', status: 'Suspended'},
+    { email: 'user4@example.com', name: 'Doc 4', status: 'Suspended'},
+    { email: 'user5@example.com', name: 'Doc 5', status: 'Approved'},
+    { email: 'user6@example.com', name: 'Doc 6', status: 'Declined'},
+
+
     // More documents...
   ];
 

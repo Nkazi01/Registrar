@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { DocViewPageRoutingModule } from './doc-view-routing.module';
 
 import { DocViewPage } from './doc-view.page';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DocViewPageRoutingModule
+    DocViewPageRoutingModule,
+    NgxDocViewerModule
   ],
   declarations: [DocViewPage]
 })

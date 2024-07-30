@@ -42,7 +42,13 @@ const routes: Routes = [
   {
     path: 'doc-view',
     loadChildren: () => import('./doc-view/doc-view.module').then( m => m.DocViewPageModule)
+  },  {
+    path: 'rejection',
+    loadChildren: () => import('./rejection/rejection.module').then( m => m.RejectionPageModule)
   },
+
+  
+
 ];
 
 @NgModule({

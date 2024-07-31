@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>VIEW ALL USERS</ion-title>
+    <ion-buttons slot="end">
+    <ion-button class="back-button" (click)="goBack()">Back</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,14 +14,14 @@
         <div class="ion-table-container">
           <table>
             <thead>
-              <tr>
+              <tr class="titles">
                 <th>Email</th>
                 <th>Staff Number</th>
                 <th>Role</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of users">
+              <tr *ngFor="let user of users" class="details">
                 <td>{{ user.email }}</td>
                 <td>{{ user.staffNumber }}</td>
                 <td>{{ user.role }}</td>

@@ -6,6 +6,23 @@ ion-header {
     text-align: center;
 }
 
+.back-button {
+    --background: maroon; 
+    //--border-radius: 1px solid black;
+    //--border: 1px solid black;
+    --color: white;
+    //padding: 2px 2px 2px 2px ;
+    //margin: 4px 4px 4px 4px;
+    //position: absolute;
+    //right: 0;
+    //transition: background-color 0.3s, color 0.3s;
+  }
+
+  .back-button:hover{
+    --background:rgb(13, 80, 111);
+    --color: rgb(254, 186, 50);
+  }
+
 ion-content {
     display: flex;
     justify-content: center;
@@ -44,11 +61,15 @@ th {
 
 td {
     padding: 12px 15px;
-    //color: black;
 }
 
-tr {
+.details{
     padding: 12px 15px;
+    color: black;
+}
+
+.titles{
+    color: white;
 }
   
 thead {

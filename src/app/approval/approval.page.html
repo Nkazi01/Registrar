@@ -22,6 +22,12 @@
               <td>{{ item.email }}</td>
               <td>{{ item.documentName }}</td>
               <td>
+                <ion-select [(ngModel)]="item.status" (ionChange)="onStatusChange(item)">
+                  <ion-select-option value="approved">Approved</ion-select-option>
+                  <ion-select-option value="declined">Declined</ion-select-option>
+                  <ion-select-option value="suspended">Suspended</ion-select-option>
+                </ion-select>
+              <td>
                 <ion-checkbox [(ngModel)]="item.approved" (ionChange)="onCheckboxChange(item, 'approved')"></ion-checkbox>
               </td>
 

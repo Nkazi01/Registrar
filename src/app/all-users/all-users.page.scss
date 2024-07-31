@@ -19,8 +19,8 @@ ion-header {
   }
 
   .back-button:hover{
-    --background:rgb(13, 80, 111);
-    --color: rgb(254, 186, 50);
+    --background: #054c5b;
+    --color: rgb(201, 145, 21);
   }
 
 ion-content {
@@ -28,7 +28,7 @@ ion-content {
     justify-content: center;
     align-items: center;
     height: 100%;
-    --background: rgb(13, 80, 111);
+    --background: #054c5b;
     margin: 30px;
     padding: 16px;
 }
@@ -45,7 +45,7 @@ ion-grid {
     width: 100%;
     background-color: #ffffff;
     border-radius: 0px;
-    box-shadow: 0 4px 8px rgb(254, 186, 50);
+    box-shadow: 0 4px 8px grey;
 }
   
 table {
@@ -81,8 +81,8 @@ tbody tr {
 }
   
 tbody tr:hover {
-    background: rgb(13, 80, 111);
-    color: rgb(254, 186, 50);
+    background: #054c5b;
+    color: rgb(201, 145, 21);
     text-decoration: solid;
     transition: ease 0.3s;
     transform: scale(1.01);

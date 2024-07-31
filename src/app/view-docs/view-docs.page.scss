@@ -18,14 +18,14 @@ ion-title {
 }
 
 .profile-icon:hover {
-    --background: rgb(13, 80, 111);
+    --background: #054c5b;
     color: white;
     border-radius: 54%;
 }
 
   
 .content-background {
-    --background: rgb(13, 80, 111);
+    --background: #054c5b;
 }
   
 .view-docs-container {
@@ -72,13 +72,13 @@ ion-title {
   }
   
   .side-panel li:hover {
-    background-color: rgb(13, 80, 111);
-    color: rgb(254, 186, 50);
+    background-color: #054c5b;
+    color: rgb(201, 145, 21);
     transform: scale(1.05); /* Slightly increased scaling for hover effect */
   }
   
   .select {
-    color: rgb(254, 186, 50);
+    color: rgb(201, 145, 21);
     //color: rgb(13, 80, 111);
     transform: scale(1.005);
   }
@@ -137,8 +137,8 @@ th {
 }
 
 .odd-row:hover {
-    background-color: rgb(13, 80, 111);
-    color:rgb(254, 186, 50);
+    background-color: #054c5b;
+    color:rgb(201, 145, 21);
     text-decoration: solid;
     transition: ease 0.3s ;
     transform: scale(1.01);
@@ -150,8 +150,8 @@ th {
 }
 
 .even-row:hover {
-    background-color: rgb(13, 80, 111);
-    color:rgb(254, 186, 50);
+    background-color: #054c5b;
+    color:rgb(201, 145, 21);
     text-decoration: solid;
     transition: ease 0.3s ;
     transform: scale(1.01);
@@ -159,8 +159,8 @@ th {
 
 /* Style for selected row */
 .selected-row {
-    background-color: rgb(254, 186, 50); 
-    color:  rgb(13, 80, 111);
+    background-color: rgb(201, 145, 21); 
+    color: #054c5b;
     transform: scale(1.005);
 }
   

@@ -27,17 +27,11 @@
                   <ion-select-option value="declined">Declined</ion-select-option>
                   <ion-select-option value="suspended">Suspended</ion-select-option>
                 </ion-select>
-              <td>
-                <ion-checkbox [(ngModel)]="item.approved" (ionChange)="onCheckboxChange(item, 'approved')"></ion-checkbox>
-              </td>
+             
 
              
-              <td>
-                <ion-checkbox [(ngModel)]="item.declined" (ionChange)="onCheckboxChange(item, 'declined')"></ion-checkbox>
-              </td>
-              <td>
-                <ion-checkbox [(ngModel)]="item.suspended" (ionChange)="onCheckboxChange(item, 'suspended')"></ion-checkbox>
-              </td>
+             
+             
               <td>
                 <ion-input [(ngModel)]="item.comment" placeholder="Add comment" class="comment-input"></ion-input>
               </td>

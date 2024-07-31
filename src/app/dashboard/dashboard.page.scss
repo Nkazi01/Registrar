@@ -6,10 +6,19 @@
 .div1 {
   margin-top: 90px;
   width: 300px; /* Fixed width for div1 */
-  background-color: black;
+  background-color: #662008;
   height: 85%;
   overflow: auto; /* Ensure content can scroll if it overflows */
 }
+
+.card1 {
+  margin-top: 50px;
+}
+
+.footer1{
+margin-bottom: 70px;
+}
+
 
 .div2 {
   flex: 1; /* div2 will take the remaining space */

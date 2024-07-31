@@ -13,6 +13,6 @@ export class DocViewPage implements OnInit {
   ngOnInit() {
   }
 
-  documenturl = '/src/assets/DIRISA.pdf';
+
 
 }

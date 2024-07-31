@@ -21,19 +21,12 @@
             <tr *ngFor="let item of items; let i = index" [ngClass]="{'striped-row': i % 2 === 0}">
               <td>{{ item.email }}</td>
               <td>{{ item.documentName }}</td>
-              <!-- <td>
-                <ion-checkbox [(ngModel)]="item.approved" (ionChange)="onCheckboxChange(item, 'approved')"></ion-checkbox>
-              </td> -->
-
-              <ion-select>
-                <ion-select-option>Approved</ion-select-option>
-                <ion-select-option>Declined</ion-select-option>
-              </ion-select>
               <td>
-                <ion-checkbox [(ngModel)]="item.declined" (ionChange)="onCheckboxChange(item, 'declined')"></ion-checkbox>
-              </td>
-              <td>
-                <ion-checkbox [(ngModel)]="item.suspended" (ionChange)="onCheckboxChange(item, 'suspended')"></ion-checkbox>
+                <ion-select [(ngModel)]="item.status" (ionChange)="onStatusChange(item)">
+                  <ion-select-option value="approved">Approved</ion-select-option>
+                  <ion-select-option value="declined">Declined</ion-select-option>
+                  <ion-select-option value="suspended">Suspended</ion-select-option>
+                </ion-select>
               </td>
               <td>
                 <ion-input [(ngModel)]="item.comment" placeholder="Add comment" class="comment-input"></ion-input>

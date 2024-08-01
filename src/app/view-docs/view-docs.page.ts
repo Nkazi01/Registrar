@@ -15,7 +15,24 @@ export class ViewDocsPage implements OnInit {
     { email: 'user4@example.com', name: 'Doc 4', status: 'Suspended'},
     { email: 'user5@example.com', name: 'Doc 5', status: 'Approved'},
     { email: 'user6@example.com', name: 'Doc 6', status: 'Declined'},
-
+    { email: 'user7@example.com', name: 'Doc 7', status: 'Approved'},
+    { email: 'user8@example.com', name: 'Doc 8', status: 'Declined'},
+    { email: 'user9@example.com', name: 'Doc 9', status: 'Suspended'},
+    { email: 'user10@example.com', name: 'Doc 10', status: 'Suspended'},
+    { email: 'user11@example.com', name: 'Doc 11', status: 'Approved'},
+    { email: 'user12@example.com', name: 'Doc 12', status: 'Declined'},
+    { email: 'user13@example.com', name: 'Doc 13', status: 'Approved'},
+    { email: 'user14@example.com', name: 'Doc 14', status: 'Declined'},
+    { email: 'user15@example.com', name: 'Doc 15', status: 'Suspended'},
+    { email: 'user16@example.com', name: 'Doc 16', status: 'Suspended'},
+    { email: 'user17@example.com', name: 'Doc 17', status: 'Approved'},
+    { email: 'user18@example.com', name: 'Doc 18', status: 'Declined'},
+    { email: 'user19@example.com', name: 'Doc 19', status: 'Approved'},
+    { email: 'user20@example.com', name: 'Doc 20', status: 'Declined'},
+    { email: 'user21@example.com', name: 'Doc 21', status: 'Suspended'},
+    { email: 'user22@example.com', name: 'Doc 22', status: 'Suspended'},
+    { email: 'user23@example.com', name: 'Doc 23', status: 'Approved'},
+    { email: 'user24@example.com', name: 'Doc 24', status: 'Declined'},
 
     // More documents...
   ];

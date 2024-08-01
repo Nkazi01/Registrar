@@ -1,14 +1,14 @@
 ion-toolbar {
     --background: maroon;
 }
-  
+
 ion-title {
     padding: 10px 5px;
     margin: 5px 15px;
     color: white;
     text-align: center;
 }
-  
+
 .profile-icon {
     background-color: maroon;
     color: black;
@@ -23,7 +23,6 @@ ion-title {
     border-radius: 54%;
 }
 
-  
 .content-background {
     --background: #054c5b;
 }
@@ -36,7 +35,7 @@ ion-title {
 }
 
 .search-icon {
-    color: rgb(201, 145, 21);
+    color: maroon;
     margin-right: 10px;
 }
 
@@ -60,40 +59,32 @@ ion-title {
     background-color: #054c5b;
     color: rgb(201, 145, 21);
 }
-  
+
 .view-docs-container {
     display: flex;
     flex-direction: row;
     padding: 10px 10px 10px 10px;
     height: calc(100% - 56px);
     box-sizing: border-box;
-  
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
 }
-  
+
 .side-panel {
     background-color: maroon;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
     color: white;
-    // margin: 10px 10px 10px 10px;
-    width: 250px;  // Adjusted for larger screens
-  
-    @media (max-width: 768px) {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+    width: 250px;
+    overflow-y: auto;
+    max-height: 100%;
 }
-  
+
 .side-panel ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .side-panel li {
+}
+
+.side-panel li {
     padding: 10px;
     cursor: pointer;
     margin-bottom: 10px;
@@ -101,22 +92,21 @@ ion-title {
     border-radius: 5px;
     text-align: left;
     position: relative;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-  }
-  
-  .side-panel li:hover {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.side-panel li:hover {
     background-color: #054c5b;
     color: rgb(201, 145, 21);
-    transform: scale(1.05); /* Slightly increased scaling for hover effect */
-  }
-  
-  .select {
-    color: rgb(201, 145, 21);
-    //color: rgb(13, 80, 111);
     transform: scale(1.005);
-  }
-  
-  .count-circle {
+}
+
+.select {
+    color: rgb(201, 145, 21);
+    transform: scale(1.005);
+}
+
+.count-circle {
     background-color: white;
     color: maroon;
     border-radius: 50%;
@@ -125,28 +115,33 @@ ion-title {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  
+}
+
 .table-container {
     flex: 1;
     background-color: #ffffff;
-    // margin: 20px 20px 20px 20px;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Add vertical scroll */
+    max-height: 100%; /* Ensure the table container doesn't exceed its parent */
 }
-  
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
-  
+
 thead {
     background-color: maroon;
 }
-  
+
+tbody{
+    width: 98%;
+    height: 98%;
+}
+
 td {
     padding: 10px;
     text-align: left;
@@ -159,21 +154,20 @@ th {
     color: white;
     border-bottom: 1px solid #ddd;
 }
-  
+
 .odd-row {
     background-color: #054c5b;
     color: rgb(255, 255, 255);
-
 }
 
 .odd-row:hover {
     background-color: rgb(201, 145, 21);
     color: #054c5b;
     text-decoration: solid;
-    transition: ease 0.3s ;
-    transform: scale(1.01);
+    transition: ease 0.3s;
+    transform: scale(1.005);
 }
-  
+
 .even-row {
     background-color: #054c5b;
     color: rgb(255, 255, 255);
@@ -183,59 +177,57 @@ th {
     background-color: rgb(201, 145, 21);
     color: #054c5b;
     text-decoration: solid;
-    transition: ease 0.3s ;
-    transform: scale(1.01);
+    transition: ease 0.3s;
+    transform: scale(1.005);
 }
 
-/* Style for selected row */
 .selected-row {
-    background-color: rgb(201, 145, 21); 
+    background-color: rgb(201, 145, 21);
     color: #054c5b;
     transform: scale(1.005);
 }
-  
+
 ion-footer {
     background-color: maroon;
 }
-  
+
 ion-footer ion-title {
     color: white;
     text-align: center;
 }
-  
+
 .heart-icon {
     color: red;
 }
-  
-// Responsive Styles
+
 @media (max-width: 768px) {
     .view-docs-container {
         flex-direction: column;
     }
-  
+
     .side-panel {
         width: 100%;
         margin-bottom: 10px;
     }
-  
+
     .table-container {
         width: 100%;
     }
 }
-  
+
 @media (max-width: 480px) {
     ion-title {
         font-size: 16px;
     }
-  
+
     .side-panel ul {
         font-size: 14px;
     }
-  
+
     .table-container {
         padding: 10px;
     }
-  
+
     th, td {
         font-size: 14px;
         padding: 8px;

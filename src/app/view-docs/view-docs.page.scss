@@ -123,35 +123,32 @@ td {
 th {
     padding: 10px;
     text-align: left;
+    color: white;
     border-bottom: 1px solid #ddd;
 }
   
-th {
-    color: white;
-}
-  
 .odd-row {
-    background-color: white;
-    color: rgb(34, 34, 34);
+    background-color: #054c5b;
+    color: rgb(255, 255, 255);
 
 }
 
 .odd-row:hover {
-    background-color: #054c5b;
-    color:rgb(201, 145, 21);
+    background-color: rgb(201, 145, 21);
+    color: #054c5b;
     text-decoration: solid;
     transition: ease 0.3s ;
     transform: scale(1.01);
 }
   
 .even-row {
-    background-color: lightcoral;
-    color: rgb(57, 48, 48);
+    background-color: #054c5b;
+    color: rgb(255, 255, 255);
 }
 
 .even-row:hover {
-    background-color: #054c5b;
-    color:rgb(201, 145, 21);
+    background-color: rgb(201, 145, 21);
+    color: #054c5b;
     text-decoration: solid;
     transition: ease 0.3s ;
     transform: scale(1.01);

@@ -6,22 +6,41 @@ ion-toolbar {
   display: flex;
   justify-content: center;
 }
+.form-title {
+  text-align: center; /* Center the title */
+  margin: 20px auto; /* Space above and below the title */
+  color: rgb(238, 231, 231); /* Title color */
+  font-size: 24px; /* Adjust font size as needed */
+}
 
 .center-title {
   text-align: center;
   flex: 1;
-  color: black;  // Ensure the text color is black
-  font-size: 20px;  // Adjust font size if needed
+  color: black;  /* Ensure the text color is black */
+  font-size: 20px;  /* Adjust font size if needed */
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
 }
 
 table {
-  width: 100%;
+  width: 80%;  /* Adjust the width to your preference */
   border-collapse: collapse;
+  margin: 0 auto;  /* Center the table */
 }
 
 th {
-  background-color: rgb(122, 17, 17);  // Set background color of table headers to red
-  color: white;  // Ensure the text color is white for contrast
+  background-color: rgb(122, 17, 17);  /* Set background color of table headers to red */
+  color: white;  /* Ensure the text color is white for contrast */
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
@@ -34,12 +53,12 @@ td {
 }
 
 .striped-row {
-  background-color: #ffe4e1;  // Light pink
+  background-color: #ffe4e1;  /* Light pink */
 }
 
 .comment-input {
-  --background: #d3d3d3;  // Grey background
-  color: black;  // Black text
+  --background: #d3d3d3;  /* Grey background */
+  color: black;  /* Black text */
 }
 
 tr:nth-child(even) {
@@ -47,18 +66,22 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-  background-color: #ffe4e1;  // Light pink
+  background-color: #ffe4e1;  /* Light pink */
 }
 
 .button-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
 }
 
+button-group ion-button {
+  margin: 0 10px; /* Add margin between buttons */
+}
+
 .back-button {
-  --background: maroon;  // Set background color to maroon
-  --color: white;  // Set text color to white
+  --background: maroon;  /* Set background color to maroon */
+  --color: white;  /* Set text color to white */
 }
 
 .reset-button {

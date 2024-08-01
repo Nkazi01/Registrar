@@ -27,6 +27,39 @@ ion-title {
 .content-background {
     --background: #054c5b;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+}
+
+.search-icon {
+    color: rgb(201, 145, 21);
+    margin-right: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid maroon;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    --background: maroon;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #054c5b;
+    color: rgb(201, 145, 21);
+}
   
 .view-docs-container {
     display: flex;

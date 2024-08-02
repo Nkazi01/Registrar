@@ -1,70 +1,137 @@
+/* General Background Color for ion-content */
 ion-content {
   --ion-background-color: teal;
+  display: flex;
+  flex-direction: column;
+  // height: 100vh; /* Full viewport height */
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Center the toolbar content */
 ion-toolbar {
   display: flex;
   justify-content: center;
 }
 
+/* Style for the main title in the form */
+.form-title {
+  text-align: center;
+  margin: 10px auto; /* Reduced margin for better fit */
+  color: rgb(238, 231, 231);
+  font-size: 20px; /* Adjusted font size */
+}
+
+/* Style for centered title */
 .center-title {
   text-align: center;
+  color: black;
+  font-size: 18px; /* Adjusted font size */
+  margin-top: 10px; /* Margin adjustment */
+}
+
+/* Style for the form container to ensure proper layout */
+.form-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  color: black;  // Ensure the text color is black
-  font-size: 20px;  // Adjust font size if needed
+  // overflow: hidden; /* Hide overflow */
+  padding: 0 10px; /* Add padding to container edges */
 }
 
+/* Style for search container with adjusted positioning */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0; /* Adjusted margin to fit better */
+}
+
+/* Style for table container with adjusted positioning */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; /* Margin for spacing */
+  flex: 1; /* Allow it to grow and fill available space */
+  // overflow-y: auto; /* Scroll if content exceeds */
+}
+
+/* Table styling with max height to fit within viewport */
 table {
-  width: 100%;
+  width: 100%; /* Full width of container */
   border-collapse: collapse;
+  max-height: calc(100vh - 180px); /* Adjust based on margins and height of other elements */
+  // overflow-y: auto; /* Allow vertical scrolling within the table */
+  margin: 0 auto;
 }
 
+/* Style for table headers */
 th {
-  background-color: rgb(122, 17, 17);  // Set background color of table headers to red
-  color: white;  // Ensure the text color is white for contrast
+  background-color: rgb(122, 17, 17); /* Red background */
+  color: white; /* White text for contrast */
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
 }
 
+/* Style for table cells */
 td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
 }
 
-.striped-row {
-  background-color: #ffe4e1;  // Light pink
-}
-
-.comment-input {
-  --background: #d3d3d3;  // Grey background
-  color: black;  // Black text
-}
-
+/* Alternating row colors for better readability */
 tr:nth-child(even) {
   background-color: white;
 }
 
 tr:nth-child(odd) {
-  background-color: #ffe4e1;  // Light pink
+  background-color: #ffe4e1; /* Light pink */
 }
 
+/* Class for additional striped rows (optional) */
+.striped-row {
+  background-color: #ffe4e1; /* Light pink */
+}
+
+/* Style for comment input field */
+/*.comment-input {
+  --background: #d3d3d3; /* Grey background */
+  /*color: black; /* Black text */
+/*}
+/* Style for comment text area */
+.comment-textarea {
+  --background: #d3d3d3; /* Grey background */
+  color: black; /* Black text */
+  height: 100px; /* Default height, adjust as needed */
+  resize: none; /* Disable manual resizing if necessary */
+  margin-top: 5px;
+}
+
+
+
+/* Button group styling */
 .button-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  margin-top: 20px; /* Adjusted margin to fit better */
 }
 
+/* Styling for individual buttons within the button group */
+.button-group ion-button {
+  margin: 0 10px; /* Adjusted margin between buttons */
+}
+
+/* Specific button styles */
 .back-button {
-  --background: maroon;  // Set background color to maroon
-  --color: white;  // Set text color to white
+  --background: maroon; /* Maroon background */
+  --color: white; /* White text */
 }
 
 .reset-button {
-  --background: red;
+  --background: red; /* Red background */
 }
 
 .save-button {
-  --background: green;
+  --background: green; /* Green background */
 }

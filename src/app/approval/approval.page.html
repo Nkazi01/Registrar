@@ -1,45 +1,63 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="center-title">Document Evaluation</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-button" (click)="goBack()">Back</ion-button>
+    </ion-buttons>
+    <ion-title class="center-title"></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12">
-        <table>
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Document Name</th>
-              <th>Status</th>
-              <th>Comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of items; let i = index" [ngClass]="{'striped-row': i % 2 === 0}">
-              <td>{{ item.email }}</td>
-              <td>{{ item.documentName }}</td>
-              <td>
-                <ion-select [(ngModel)]="item.status" (ionChange)="onStatusChange(item)">
-                  <ion-select-option value="approved">Approved</ion-select-option>
-                  <ion-select-option value="declined">Declined</ion-select-option>
-                  <ion-select-option value="suspended">Suspended</ion-select-option>
-                </ion-select>
-             
-              <td>
-                <ion-input [(ngModel)]="item.comment" placeholder="Add comment" class="comment-input"></ion-input>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="button-group">
-          <ion-button class="back-button" (click)="goBack()">Back</ion-button>
-          <ion-button class="reset-button" (click)="resetForm()">Reset</ion-button>
-          <ion-button class="save-button" (click)="saveChanges()">Save</ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="form-title">Document Evaluation</div> <!-- Title outside the form container -->
+  <div class="form-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="search-container">
+          <ion-searchbar 
+            [(ngModel)]="searchQuery" 
+            (ionInput)="filterItems($event)" 
+            placeholder="Search...">
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Document Name</th>
+                <th>Status</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of filteredItems; let i = index" [ngClass]="{'striped-row': i % 2 === 0}">
+                <td>{{ item.email }}</td>
+                <td>{{ item.documentName }}</td>
+                <td>
+                  <ion-select [(ngModel)]="item.status" (ionChange)="onStatusChange(item)">
+                    <ion-select-option value="approved">Approved</ion-select-option>
+                    <ion-select-option value="declined">Declined</ion-select-option>
+                    <ion-select-option value="suspended">Suspended</ion-select-option>
+                  </ion-select>
+                </td>
+                <td>
+                  <ion-input [(ngModel)]="item.comment" placeholder="Add comment" class="comment-input"></ion-input>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-col>
+      </ion-row>
+      <div style="background-color: black; position: sticky; z-index: 0;">
+        <ion-row>
+          <ion-col size="12" class="button-group">
+            <ion-button class="reset-button" (click)="resetForm()">Reset</ion-button>
+            <ion-button class="save-button" (click)="saveChanges()">Save</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </div>
 </ion-content>

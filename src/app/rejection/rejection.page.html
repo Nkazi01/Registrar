@@ -1,28 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Rejection Reason</ion-title>
+    <ion-title class="center-title"></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Rejection Reason</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <div class="form-title">Rejection Reason</div> <!-- Title outside the form container -->
   <div class="form-container">
     <ion-item>
       <ion-label position="floating">Date</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" style="text-align: right;"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">By Who</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" style="text-align: right;"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Reason</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea style="text-align: right;"></ion-textarea>
     </ion-item>
   </div>
 </ion-content>

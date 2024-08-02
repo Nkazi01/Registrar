@@ -14,6 +14,7 @@ interface DocumentItem {
   styleUrls: ['./approval.page.scss'],
 })
 export class ApprovalPage implements OnInit {
+  searchQuery: string = '';
   items: DocumentItem[] = [
     { email: 'user1@example.com', documentName: 'Document 1', status: '', comment: '' },
     { email: 'user2@example.com', documentName: 'Document 2', status: '', comment: '' },
@@ -26,11 +27,20 @@ export class ApprovalPage implements OnInit {
     { email: 'user9@example.com', documentName: 'Document 9', status: '', comment: '' },
     { email: 'user10@example.com', documentName: 'Document 10', status: '', comment: '' },
   ];
+  filteredItems: DocumentItem[] = this.items;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     // Initialize any required data or services here
+  }
+
+  filterItems(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.filteredItems = this.items.filter(item => 
+      item.email.toLowerCase().includes(query) ||
+      item.documentName.toLowerCase().includes(query)
+    );
   }
 
   onStatusChange(item: DocumentItem) {
@@ -47,6 +57,7 @@ export class ApprovalPage implements OnInit {
       status: '',
       comment: ''
     }));
+    this.filteredItems = [...this.items];
   }
 
   saveChanges() {

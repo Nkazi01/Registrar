@@ -1,57 +1,40 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" style="--background:#054c5b;">
 
-  <!-- <div class="info-section">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Information</ion-card-title>
-      </ion-card-header>
+<div class="info-section">
+<ion-label style="margin-top: 20px;">Information</ion-label>   
+<span><ion-label>Progress Status</ion-label></span>
+</div>
 
-    </ion-card>
-  </div> -->
-
-  <div class="container">
-    <ion-card style="background-color: blue;"></ion-card>
+<div class="container">
+   <div>t</div>
     <section class="div1">
-      <div class="card1">
-        <ul>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-          <li><ion-label>Information System 1</ion-label></li>
-        </ul>
-      </div>
-      <div class="footer1">
-        <ion-button>Upload</ion-button>
-        <ion-button>View</ion-button>
-      </div>
+        <div class="card1">
+            <ul style="color: whitesmoke;">
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+                <li><ion-label>Information System 1</ion-label></li>
+            </ul>
+        </div>
+        <div class="footer1">
+            <ion-button (click)="Upload()">Upload</ion-button>
+            <ion-button (click)="View()">View</ion-button>
+        </div>
     </section>
-
 
 
     <section class="div2">

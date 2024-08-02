@@ -4,27 +4,35 @@
 }
 
 .div1 {
-  margin-top: 90px;
-  width: 300px; /* Fixed width for div1 */
-  background-color: #662008;
-  height: 85%;
-  overflow: auto; /* Ensure content can scroll if it overflows */
+  margin-top: 80px;
+  width: 300px;
+  background-color: #56231F;
+  height: 87.5%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1px;
+}
+
+.div1, .card1{
+  border-radius: 1px;
 }
 
 .card1 {
-  margin-top: 50px;
-  height: 110px;
- 
+  flex: 1;
+  margin-top: 20px;
+  overflow: auto; 
 }
 
-.footer1{
- display: flex;
- margin-top: 275px;
+.footer1 {
+  border-color: #812B29;
+  display: flex;
   justify-content: space-around; /* Space the buttons evenly */
   padding: 10px; /* Optional: Add some padding for better visual */
-  background-color: #662008; /* Ensure footer is visible */
+  background-color: #f8f5f3; /* Ensure footer is visible */
   position: sticky;
+  bottom: 0; /* Stick to the bottom of the container */
 }
+
 
 
 .div2 {
@@ -63,6 +71,43 @@ swiper-container {
   height: 100%;
 }
 
+.footer1 ion-button{
+  --background:#054c5b;
+}
+
+.Card ion-button{
+  --background:#054c5b;
+}
+
+.prev-button, .next-button{
+  --background:#054c5b;
+}
+
+.info-section {
+  position: absolute;
+  margin-top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure it is on top */
+  background-color: #080402; /* Ensure the background is opaque */
+}
+.info-section {
+  height: 60px;
+  margin-left: 5px;
+  background-color: whitesmoke;
+  // color: whitesmoke;
+}
+
+.info-section ion-label{
+  padding: 50px;
+  margin-bottom: 8px;
+  color: #054c5b;
+}
+
+.info-section span ion-label{
+  padding: 490px;
+}
+
 swiper-slide {
   display: flex;
   flex-direction: column;
@@ -70,16 +115,16 @@ swiper-slide {
   justify-content: center;
 }
 
-swiper-slide img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-}
+// swiper-slide img {
+//   width: auto;
+//   max-width: 100%;
+//   height: auto;
+//   max-height: 100%;
+// }
 
 .Card {
-  background-color: black;
+  background-color: whitesmoke;
   height: 290px;
-  width: 190px;
+  width: 210px;
   text-align: center;
 }

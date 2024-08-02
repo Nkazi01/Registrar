@@ -1,5 +1,5 @@
 ion-content {
-    --ion-background-color: teal;
+    --ion-background-color:#054c5b;
   }
   
   .form-title {
@@ -32,4 +32,35 @@ ion-content {
   ion-textarea {
     color: black;
   }
+  .diamond-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust gap between diamonds as needed */
+    margin-bottom: 20px; /* Space below the diamonds container */
+  }
+  
+  /* General diamond styling */
+  .diamond {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-color: transparent;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* Creates a diamond shape using clip-path */
+  }
+  
+  /* White diamond styling */
+  .white-diamond {
+    background-color: white;
+  }
+  
+  /* Maroon diamond styling */
+  .maroon-diamond {
+    background-color: maroon;
+  }
+  
+  /* Yellow diamond styling */
+  .yellow-diamond {
+    background-color: #C99115;
+  }
+  
   

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import Swiper from 'swiper';
 
 @Component({
@@ -10,13 +11,20 @@ export class DashboardPage implements OnInit, AfterViewInit {
   @ViewChild('swiper', { static: false }) swiperRef: ElementRef | undefined;
   swiper?: Swiper;
 
-  constructor() { }
+  constructor(private navController:NavController) { }
 
   ngOnInit() {}
 
   ngAfterViewInit() {
     this.swiper = this.swiperRef?.nativeElement.swiper;
   }
+Upload(){
+  this.navController.navigateForward('/upload');
+}
+
+View(){
+  this.navController.navigateForward('/view-docs');
+}
 
   goNext() {
     this.swiper?.slideNext();

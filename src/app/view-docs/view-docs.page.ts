@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDocsPage implements OnInit {
   activeTab: string = 'all';
-
+  
   allDocuments = [
     { email: 'user1@example.com', name: 'Doc 1', status: 'Approved'},
     { email: 'user2@example.com', name: 'Doc 2', status: 'Declined'},
@@ -33,7 +33,6 @@ export class ViewDocsPage implements OnInit {
     { email: 'user22@example.com', name: 'Doc 22', status: 'Suspended'},
     { email: 'user23@example.com', name: 'Doc 23', status: 'Approved'},
     { email: 'user24@example.com', name: 'Doc 24', status: 'Declined'},
-
     // More documents...
   ];
 
@@ -46,33 +45,37 @@ export class ViewDocsPage implements OnInit {
   declinedCount = this.declinedDocuments.length;
   suspendedCount = this.suspendedDocuments.length;
 
+  selectedDocument: any = null; // Variable to store the selected document
+
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  selectedDocumentType: string = 'all'; // Initialize to 'all' or whichever you want to be default
-
-showDocument(type: string): void {
-  this.selectedDocumentType = type;
-  // Add your logic to display documents based on the selected type
-}
+  ngOnInit() { }
 
   showDocuments(tab: string) {
     this.activeTab = tab;
   }
 
-// Define a variable to store the selected document
-selectedDocument: any;
-
-// Method to select a row
-selectRow(doc: any) {
+  // Method to select a row
+  selectRow(doc: any) {
     this.selectedDocument = doc;
-}
+  }
 
-// Method to check if a row is selected
-isSelected(doc: any): boolean {
+  // Method to check if a row is selected
+  isSelected(doc: any): boolean {
     return this.selectedDocument === doc;
-}
+  }
 
+  // Method to get the documents based on the selected tab
+  getDocuments() {
+    switch (this.activeTab) {
+      case 'approved':
+        return this.approvedDocuments;
+      case 'declined':
+        return this.declinedDocuments;
+      case 'suspended':
+        return this.suspendedDocuments;
+      default:
+        return this.allDocuments;
+    }
+  }
 }

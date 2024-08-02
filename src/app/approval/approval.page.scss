@@ -1,9 +1,9 @@
 /* General Background Color for ion-content */
 ion-content {
-  --ion-background-color: teal;
+  --ion-background-color: #054c5b;
   display: flex;
   flex-direction: column;
-  // height: 100vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height */
   padding: 0;
   box-sizing: border-box;
 }
@@ -17,17 +17,17 @@ ion-toolbar {
 /* Style for the main title in the form */
 .form-title {
   text-align: center;
-  margin: 10px auto; /* Reduced margin for better fit */
+  margin: 10px auto;
   color: rgb(238, 231, 231);
-  font-size: 20px; /* Adjusted font size */
+  font-size: 20px;
 }
 
 /* Style for centered title */
 .center-title {
   text-align: center;
   color: black;
-  font-size: 18px; /* Adjusted font size */
-  margin-top: 10px; /* Margin adjustment */
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 /* Style for the form container to ensure proper layout */
@@ -35,103 +35,136 @@ ion-toolbar {
   display: flex;
   flex-direction: column;
   flex: 1;
-  // overflow: hidden; /* Hide overflow */
-  padding: 0 10px; /* Add padding to container edges */
+  padding: 0 10px;
+  overflow: auto; /* Allow scrolling if content exceeds */
 }
 
-/* Style for search container with adjusted positioning */
+/* Style for search container */
 .search-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0; /* Adjusted margin to fit better */
+  margin: 10px 0; /* Reduced margin to move search bar up */
+}
+
+/* Style for search bar with white background */
+ion-searchbar {
+  --background: white;
+  --placeholder-color: #888;
 }
 
 /* Style for table container with adjusted positioning */
 .table-container {
   display: flex;
-  justify-content: center;
-  margin: 10px 0; /* Margin for spacing */
+  flex-direction: column; /* Ensure the table and buttons stack vertically */
   flex: 1; /* Allow it to grow and fill available space */
-  // overflow-y: auto; /* Scroll if content exceeds */
+  margin: 10px 0; /* Reduced margin to bring table closer */
+  max-height: calc(100vh - 160px); /* Further reduced to decrease table height */
+  overflow-y: auto; /* Allow vertical scrolling within the table container */
 }
 
-/* Table styling with max height to fit within viewport */
+/* Table styling */
 table {
-  width: 100%; /* Full width of container */
+  width: 100%;
   border-collapse: collapse;
-  max-height: calc(100vh - 180px); /* Adjust based on margins and height of other elements */
-  // overflow-y: auto; /* Allow vertical scrolling within the table */
+  max-height: 250px; /* Further reduced maximum height for the table */
+  display: block; /* Ensure that the height setting works properly */
+  overflow-y: auto; /* Add scrolling if content exceeds the fixed height */
   margin: 0 auto;
 }
 
 /* Style for table headers */
 th {
-  background-color: rgb(122, 17, 17); /* Red background */
-  color: white; /* White text for contrast */
+  background-color: maroon;
+  color: white;
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 6px; /* Reduced padding */
   text-align: center;
 }
 
 /* Style for table cells */
 td {
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 6px; /* Reduced padding */
   text-align: center;
 }
 
-/* Alternating row colors for better readability */
+/* Alternating row colors */
 tr:nth-child(even) {
   background-color: white;
 }
 
 tr:nth-child(odd) {
-  background-color: #ffe4e1; /* Light pink */
+  background-color: #ffe4e1;
 }
 
-/* Class for additional striped rows (optional) */
+/* Class for additional striped rows */
 .striped-row {
-  background-color: #ffe4e1; /* Light pink */
+  background-color: #ffe4e1;
 }
 
-/* Style for comment input field */
-/*.comment-input {
-  --background: #d3d3d3; /* Grey background */
-  /*color: black; /* Black text */
-/*}
 /* Style for comment text area */
 .comment-textarea {
-  --background: #d3d3d3; /* Grey background */
-  color: black; /* Black text */
-  height: 100px; /* Default height, adjust as needed */
-  resize: none; /* Disable manual resizing if necessary */
+  --background: #d3d3d3;
+  color: black;
+  height: 80px; /* Reduced height */
+  resize: none;
   margin-top: 5px;
 }
-
-
 
 /* Button group styling */
 .button-group {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Adjusted margin to fit better */
+  margin-top: 10px; /* Reduced margin */
 }
 
 /* Styling for individual buttons within the button group */
 .button-group ion-button {
-  margin: 0 10px; /* Adjusted margin between buttons */
+  margin: 0 8px; /* Reduced margin */
 }
 
 /* Specific button styles */
 .back-button {
-  --background: maroon; /* Maroon background */
-  --color: white; /* White text */
+  --background: maroon;
+  --color: white;
 }
 
 .reset-button {
-  --background: red; /* Red background */
+  --background: maroon;
 }
 
 .save-button {
-  --background: green; /* Green background */
+  --background: #054c5b;
+}
+
+/* Diamond container styling */
+.diamond-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduced gap */
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+/* General diamond styling */
+.diamond {
+  width: 40px; /* Adjusted size */
+  height: 40px; /* Adjusted size */
+  background-color: transparent;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  /* Creates a diamond shape using clip-path */
+}
+
+/* White diamond styling */
+.white-diamond {
+  background-color: white;
+}
+
+/* Maroon diamond styling */
+.maroon-diamond {
+  background-color: maroon;
+}
+
+/* Yellow diamond styling */
+.yellow-diamond {
+  background-color: #C99115;
 }

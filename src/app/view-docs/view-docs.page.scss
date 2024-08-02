@@ -1,14 +1,13 @@
-/* General Styles */
-ion-header, ion-footer {
-    background-color: maroon;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
-/* Ion Toolbar */
 ion-toolbar {
     --background: maroon;
 }
 
-/* Ion Title */
 ion-title {
     padding: 10px 5px;
     margin: 5px 15px;
@@ -16,7 +15,6 @@ ion-title {
     text-align: center;
 }
 
-/* Profile Icon */
 .profile-icon {
     background-color: maroon;
     color: black;
@@ -31,37 +29,30 @@ ion-title {
     border-radius: 54%;
 }
 
-/* Content Background */
 .content-background {
     --background: #054c5b;
 }
 
-/* Search Container */
 .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 20px;
-    flex-wrap: wrap;
 }
 
-/* Search Icon */
 .search-icon {
     color: maroon;
     margin-right: 10px;
 }
 
-/* Search Input */
 .search-input {
     flex: 1;
     padding: 10px;
     border: 1px solid maroon;
     border-radius: 5px;
     margin-right: 10px;
-    min-width: 200px;
 }
 
-/* Search Button */
 .search-button {
     --background: maroon;
     color: white;
@@ -75,26 +66,25 @@ ion-title {
     color: rgb(201, 145, 21);
 }
 
-/* View Docs Container */
 .view-docs-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     padding: 10px;
+    max-height: fit-content;
+    box-sizing: border-box;
 }
 
-/* Side Panel */
 .side-panel {
     background-color: maroon;
     padding: 10px;
+    margin-right: 10px;
     border-radius: 5px;
     color: white;
-    width: 100%;
-    max-width: 300px;
-    margin-right: 10px;
+    width: 250px;
     overflow-y: auto;
+    max-height: 90%;
 }
 
-/* Side Panel List Items */
 .side-panel ul {
     list-style-type: none;
     padding: 0;
@@ -123,7 +113,6 @@ ion-title {
     transform: scale(1.005);
 }
 
-/* Count Circle */
 .count-circle {
     background-color: white;
     color: maroon;
@@ -135,113 +124,105 @@ ion-title {
     transform: translateY(-50%);
 }
 
-/* Table Container */
 .table-container {
     flex: 1;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    max-height: calc(100vh - 200px);
+    max-height: fit-content;
+    width: 100%;
     position: relative;
+    overflow: hidden; /* Prevents overflow */
 }
 
-/* Table */
+.table-wrapper {
+    width: 100%;
+    max-height: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    margin-bottom: 10px;
 }
 
-/* Table Header */
-thead th {
-    padding: 10px;
-    text-align: left;
-    color: white;
-    border-bottom: 1px solid #ddd;
+thead {
     background-color: maroon;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
-/* Table Body */
 tbody {
     display: block;
     width: 100%;
-    height: calc(100% - 40px);
+    max-height: calc(100% - 0px); /* Adjust according to the height of your table headers */
     overflow-y: auto;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Table Rows */
-tbody tr {
+tr {
     display: table;
     width: 100%;
     table-layout: fixed;
+    transition: transform 0.3s ease; /* Smooth scaling transition */
 }
 
-/* Table Data Cells */
-td {
+td, th {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
-/* Odd Row */
 .odd-row {
     background-color: #054c5b;
     color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition for scaling */
 }
 
-/* Odd Row Hover */
 .odd-row:hover {
     background-color: rgb(201, 145, 21);
-    color: #054c5b;
     text-decoration: solid;
-    transition: ease 0.3s;
+    color: #054c5b;
     transform: scale(1.005);
 }
 
-/* Even Row */
 .even-row {
     background-color: #054c5b;
     color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition for scaling */
 }
 
-/* Even Row Hover */
 .even-row:hover {
     background-color: rgb(201, 145, 21);
-    color: #054c5b;
     text-decoration: solid;
-    transition: ease 0.3s;
+    color: #054c5b;
     transform: scale(1.005);
 }
 
-/* Selected Row */
 .selected-row {
     background-color: rgb(201, 145, 21);
     color: #054c5b;
     transform: scale(1.005);
 }
 
-/* Ion Footer */
 ion-footer {
     background-color: maroon;
 }
 
-/* Ion Footer Title */
 ion-footer ion-title {
     color: white;
     text-align: center;
 }
 
-/* Heart Icon */
 .heart-icon {
     color: red;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .view-docs-container {
         flex-direction: column;
     }
@@ -253,32 +234,6 @@ ion-footer ion-title {
 
     .table-container {
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .search-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .search-input {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .search-button {
-        width: 100%;
-    }
-
-    .side-panel {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .table-container {
-        width: 100%;
-        max-height: calc(100vh - 150px); /* Adjust for smaller screens */
     }
 }
 
@@ -298,9 +253,5 @@ ion-footer ion-title {
     th, td {
         font-size: 14px;
         padding: 8px;
-    }
-
-    .search-container {
-        flex-direction: column;
     }
 }

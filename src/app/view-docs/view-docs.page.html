@@ -33,74 +33,78 @@
       </ul>
     </div>
     <div class="table-container">
-      <table *ngIf="activeTab === 'all'">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Document Name</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doc of allDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
-          (click)="selectRow(doc)">
-            <td>{{doc.email}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.status}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table *ngIf="activeTab === 'approved'">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Document Name</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doc of approvedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
-          (click)="selectRow(doc)">
-            <td>{{doc.email}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.status}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table *ngIf="activeTab === 'declined'">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Document Name</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doc of declinedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
-          (click)="selectRow(doc)">
-            <td>{{doc.email}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.status}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table *ngIf="activeTab === 'suspended'">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Document Name</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doc of suspendedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}"
-          (click)="selectRow(doc)">
-            <td>{{doc.email}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.status}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper" *ngIf="activeTab === 'all'">
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Document Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of allDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}" (click)="selectRow(doc)">
+              <td>{{doc.email}}</td>
+              <td>{{doc.name}}</td>
+              <td>{{doc.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrapper" *ngIf="activeTab === 'approved'">
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Document Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of approvedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}" (click)="selectRow(doc)">
+              <td>{{doc.email}}</td>
+              <td>{{doc.name}}</td>
+              <td>{{doc.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrapper" *ngIf="activeTab === 'declined'">
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Document Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of declinedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}" (click)="selectRow(doc)">
+              <td>{{doc.email}}</td>
+              <td>{{doc.name}}</td>
+              <td>{{doc.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrapper" *ngIf="activeTab === 'suspended'">
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Document Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of suspendedDocuments; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'selected-row': isSelected(doc)}" (click)="selectRow(doc)">
+              <td>{{doc.email}}</td>
+              <td>{{doc.name}}</td>
+              <td>{{doc.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </ion-content>

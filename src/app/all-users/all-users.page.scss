@@ -6,12 +6,29 @@ ion-header {
     text-align: center;
 }
 
+.back-button {
+    --background: maroon; 
+    //--border-radius: 1px solid black;
+    //--border: 1px solid black;
+    --color: white;
+    //padding: 2px 2px 2px 2px ;
+    //margin: 4px 4px 4px 4px;
+    //position: absolute;
+    //right: 0;
+    //transition: background-color 0.3s, color 0.3s;
+  }
+
+  .back-button:hover{
+    --background: #054c5b;
+    --color: rgb(201, 145, 21);
+  }
+
 ion-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    --background: rgb(13, 80, 111);
+    --background: #054c5b;
     margin: 30px;
     padding: 16px;
 }
@@ -28,7 +45,7 @@ ion-grid {
     width: 100%;
     background-color: #ffffff;
     border-radius: 0px;
-    box-shadow: 0 4px 8px rgb(254, 186, 50);
+    box-shadow: 0 4px 8px grey;
 }
   
 table {
@@ -44,11 +61,15 @@ th {
 
 td {
     padding: 12px 15px;
-    //color: black;
 }
 
-tr {
+.details{
     padding: 12px 15px;
+    color: black;
+}
+
+.titles{
+    color: white;
 }
   
 thead {
@@ -60,8 +81,8 @@ tbody tr {
 }
   
 tbody tr:hover {
-    background: rgb(13, 80, 111);
-    color: rgb(254, 186, 50);
+    background: #054c5b;
+    color: rgb(201, 145, 21);
     text-decoration: solid;
     transition: ease 0.3s;
     transform: scale(1.01);

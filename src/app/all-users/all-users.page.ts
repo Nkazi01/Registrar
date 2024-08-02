@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-users',
@@ -13,8 +14,12 @@ export class AllUsersPage implements OnInit {
     // Add more users as needed
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
+
+  goBack() {
+    this.router.navigate(['/home']);  // Update this to your actual route
+  }
 
 }

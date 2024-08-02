@@ -13,10 +13,17 @@
 
 .card1 {
   margin-top: 50px;
+  height: 110px;
+ 
 }
 
 .footer1{
-margin-bottom: 70px;
+ display: flex;
+ margin-top: 275px;
+  justify-content: space-around; /* Space the buttons evenly */
+  padding: 10px; /* Optional: Add some padding for better visual */
+  background-color: #662008; /* Ensure footer is visible */
+  position: sticky;
 }
 
 

@@ -50,12 +50,14 @@
           </table>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col size="12" class="button-group">
-          <ion-button class="reset-button" (click)="resetForm()">Reset</ion-button>
-          <ion-button class="save-button" (click)="saveChanges()">Save</ion-button>
-        </ion-col>
-      </ion-row>
+      <div style="background-color: black; position: sticky; z-index: 0;">
+        <ion-row>
+          <ion-col size="12" class="button-group">
+            <ion-button class="reset-button" (click)="resetForm()">Reset</ion-button>
+            <ion-button class="save-button" (click)="saveChanges()">Save</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
     </ion-grid>
   </div>
 </ion-content>

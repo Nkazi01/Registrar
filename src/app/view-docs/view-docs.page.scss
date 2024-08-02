@@ -124,7 +124,8 @@ ion-title {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Add vertical scroll */
-    max-height: 100%; /* Ensure the table container doesn't exceed its parent */
+    max-height: 100%; 
+    position: relative;
 }
 
 table {
@@ -147,6 +148,7 @@ td {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
 
 th {
     padding: 10px;

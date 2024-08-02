@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -42,9 +42,14 @@ const routes: Routes = [
   {
     path: 'doc-view',
     loadChildren: () => import('./doc-view/doc-view.module').then( m => m.DocViewPageModule)
-  },  {
+  },
+  {
     path: 'rejection',
     loadChildren: () => import('./rejection/rejection.module').then( m => m.RejectionPageModule)
+  },
+  {
+    path: 'assign',
+    loadChildren: () => import('./assign/assign.module').then( m => m.AssignPageModule)
   },
 
   

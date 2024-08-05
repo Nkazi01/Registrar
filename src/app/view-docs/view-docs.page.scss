@@ -6,6 +6,18 @@ html, body {
 
 ion-toolbar {
     --background: maroon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ion-buttons {
+    display: flex;
+    align-items: center;
+}
+
+ion-button {
+    margin: 0 10px;
 }
 
 ion-title {
@@ -15,12 +27,26 @@ ion-title {
     text-align: center;
 }
 
-.profile-icon {
-    background-color: maroon;
-    color: black;
+.back-icon {
+    --background: maroon;
+    color: white;
     padding: 8px;
     border-radius: 50%;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    transition: --background 0.3s ease-in-out, color 0.2s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.back-icon:hover {
+    --background: #054c5b;
+    color: rgb(201, 145, 21);
+    border-radius: 54%;
+}
+
+.profile-icon {
+    --background: maroon;
+    color: black;
+    padding: 8px;
+    border-radius: 60%;
+    transition: --background 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
 
 .profile-icon:hover {
